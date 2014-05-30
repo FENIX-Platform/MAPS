@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+						   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+    <context:annotation-config />
+
+    <!-- Jersey auto-scan -->
+    <context:component-scan base-package="org.fao.fenix.*" />
+
+
+    <!-- Configurer that replaces ${...} placeholders with values from a properties file -->
+	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location">
+			<value>/WEB-INF/maps.properties</value>
+		</property>
+	</bean>
+
+	<bean id="mapsWebService" class="org.fao.fenix.maps.web.services.MapsWebService">
+	</bean>
+	
+	<bean id="mapsConf" class="org.fao.fenix.maps.configurations.MapsConf">
+	    <property name="url" value="${maps.url}" />
+	    <constructor-arg value="/styles" />
+	    <constructor-arg value="/export" />
+	</bean>
+	
+	<bean id="leafletConf" class="org.fao.fenix.maps.configurations.LeafletConf">
+		<!--<property name="ip" value="${maps.ip}" />
+		<property name="port" value="${maps.port}" /> -->
+		<property name="url" value="${maps.url}" />
+		<property name="leafletVersion" value="${maps.leaftlet.version}" />
+		<property name="leafletPath" value="/libs/leaflet" />
+		<property name="jqueryVersion" value="${maps.jquery.version}" />
+		<property name="jqueryPath" value="/libs/jquery" />
+	</bean>
+	
+	<bean id="baseLayerConf" class="org.fao.fenix.maps.configurations.BaseLayerConf">
+		<property name="osmURL" value="${osm.url}" />
+		<property name="mapquestURL" value="${mapquest.url}" />
+		<property name="mapquestNASAURL" value="${mapquest.nasa.aerial.url}" />
+		<property name="esriWorldStreetMapURL" value="${esri.worldstreetmap.url}" />
+	</bean>
+
+	<bean id="geoserverConf" class="org.fao.fenix.maps.configurations.GeoserverConf">
+        <property name="wmsurl" value="${geoserver.wmsurl}" />
+        <property name="resturl" value="${geoserver.resturl}" />
+        <property name="datadir" value="${geoserver.datadir}" />
+        <property name="username" value="${geoserver.username}" />
+        <property name="password" value="${geoserver.password}" />
+	</bean>
+
+    <bean id="scriptsConf" class="org.fao.fenix.maps.configurations.ScriptsConf">
+        <!-- <constructor-arg value="/scripts/python" /> -->
+        <property name="pythonScriptsPath" value="${scripts.python.path}" />
+        <property name="pythonHistogram" value="${scripts.python.histogram}" />
+    </bean>
+	
+	<bean id="joinLayerUtils" class="org.fao.fenix.maps.join.JoinLayerUtils">
+	</bean>
+	
+	<bean id="tinyClient" class="org.fao.fenix.maps.util.TinyClient">
+		<property name="tinyBaseURL" value="${tiny.baseurl}" />
+	</bean>
+	
+	<bean id="dataServiceUtils" class="org.fao.fenix.maps.util.DataServiceUtils">
+	    <property name="wdsURL" value="${wds.url}" />
+		<property name="wdsIP" value="${wds.ip}" />
+		<property name="wdsPORT" value="${wds.port}" />
+	</bean>
+
+    <bean id="datasourcePool" class="org.fao.fenix.wds.core.datasource.DatasourcePool" lazy-init="false" init-method="init">
+        <constructor-arg value="/datasources" />
+    </bean>
+	
+</beans>

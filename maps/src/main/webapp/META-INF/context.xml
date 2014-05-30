@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context docBase="maps-web" path="/maps" reloadable="true">
+
+	<WatchedResource>WEB-INF/web.xml</WatchedResource>
+	
+</Context>

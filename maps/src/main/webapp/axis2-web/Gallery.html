@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	
+	<head>
+		
+		<title>FENIX Maps Gallery</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<link rel='icon' type='image/png' href='http://ldvapp07.fao.org:8030/downloads/fao.png'>
+		<link rel="stylesheet" type="text/css" href="TryIt.css" />
+	</head>
+	
+	<body style="background-color: #FF8C00;">
+	
+		<div style="height: 50px;" ></div>
+	  	
+	  	<table align="center" style="width: 1000px; align: center; border: 3px solid #1D4589; background-color: #FFFFFF;">
+	  		<tr>
+	  			<td align="left" width="80%" style="font-family: sans-serif; font-weight: bold; color: #FF8C00; font-size: 35pt;">FENIX Charts Gallery</td>
+	  			<td width="200px" align="right"><img src="FAOLogo.png" width="50" height="50" alt="FAO"></td>
+  				<td width="200px" align="right"><img src="Axis2Logo.jpg" width="87" height="50" alt="Apache Axis2"></td>
+	  		</tr>
+	  		<tr>
+	  			<td colspan="3" style="font-family: sans-serif; text-align: justify;">
+	  				This gallery shows some examples with the REST request and the final output side-by-side. 
+	  			</td>
+	  		</tr>
+	  	</table>
+	  	
+	  	<div style="height: 25px;" ></div>
+	  	
+	  	<!-- BASIC LINE -->
+	  	<table align="center" style="width: 1000px; align: center; background-color: #FFFFFF;">
+	  		<tr>
+	  			<td colspan='2' class='title'>Join</td>
+	  		</tr>
+	  		<tr>
+	  			<td width='500px' class='tutorial'>
+	  				<a target='_blank' href='http://localhost:8080/charts/api?out=html&engine=highcharts&chart=renderto:container1;type:line;marginright:130;marginbottom:25&title=text:Monthly_Average_Temperature;x:-20&subtitle=text:Source_WorldClimate.com&xaxis=categories:Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec&yaxis=plotlines[value:0;width:1;color:808080];title[text:Temperature_%C2%B0C]&legend=layout:vertical;align:right;verticalalign:top;x:-10;y:100;borderwidth:0&series=data[29.9,71.5,106.4,129.2,144.0,176.0,135.6,148.5,216.4,194.1,95.6,54.4;name:Tokyo];data[-0.2,0.8,5.7,11.3,17.0,22.0,24.8,24.1,20.1,14.1,8.6,2.5;name:New_York]'>
+	  				http://localhost:8080/charts/api?out=html&engine=highcharts&chart=renderto:container1;type:line;marginright:130;marginbottom:25&title=text:Monthly_Average_Temperature;x:-20&subtitle=text:Source_WorldClimate.com&xaxis=categories:Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec&yaxis=plotlines[value:0;width:1;color:808080];title[text:Temperature_%C2%B0C]&legend=layout:vertical;align:right;verticalalign:top;x:-10;y:100;borderwidth:0&series=data[29.9,71.5,106.4,129.2,144.0,176.0,135.6,148.5,216.4,194.1,95.6,54.4;name:Tokyo];data[-0.2,0.8,5.7,11.3,17.0,22.0,24.8,24.1,20.1,14.1,8.6,2.5;name:New_York]
+	  				</a>
+	  			</td>
+	  			<td>
+	  				<iframe id='CHART-01' width='500px' height='300px' style='border: 3px solid #1D4589;' src='http://localhost:8080/charts/api?out=html&engine=highcharts&chart=renderto:container1;type:line;marginright:130;marginbottom:25&title=text:Monthly_Average_Temperature;x:-20&subtitle=text:Source_WorldClimate.com&xaxis=categories:Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec&yaxis=plotlines[value:0;width:1;color:808080];title[text:Temperature_%C2%B0C]&legend=layout:vertical;align:right;verticalalign:top;x:-10;y:100;borderwidth:0&series=data[29.9,71.5,106.4,129.2,144.0,176.0,135.6,148.5,216.4,194.1,95.6,54.4;name:Tokyo];data[-0.2,0.8,5.7,11.3,17.0,22.0,24.8,24.1,20.1,14.1,8.6,2.5;name:New_York]'>Your browser does not support iframes.</iframe>
+	  			</td>
+	  		</tr>
+	  		<tr>
+	  			<td colspan='2' class='description'>Definition of multiple series, legend and axes.</td>
+	  		</tr>
+	  	</table>
+	  	
+	  	<div style="height: 25px;" ></div>
+	  	
+	
+</html>

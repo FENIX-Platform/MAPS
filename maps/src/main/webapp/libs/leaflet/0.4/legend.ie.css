@@ -1,0 +1,51 @@
+#legend
+{
+	z-index: 100;
+	position:absolute;
+	background-color: #000000;
+	padding: 3px;
+}
+
+.topright {
+	right: 15px;
+	top: 10px;
+}
+
+.bottomright {
+	right: 10px;
+	bottom: 25px;
+}
+
+.bottomleft {
+	left: 10px;
+	bottom: 25px;
+}
+
+.topleft {
+	left: 10px;
+	top: 55px;
+}
+
+.legendtitle { 
+    font-family:'Trebuchet MS', Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight:bold;
+    color:#fff !important;
+}
+
+.legendvalue {
+    font-family:'Trebuchet MS', Arial, Helvetica, sans-serif;
+    font-size: 9px;
+    font-weight:bold;
+    color:#fff !important;
+}
+
+.legendvaluebox {
+	width: 17px;
+	height: 15px;
+	margin-left: 2px;
+	border: 1px solid;
+}
+
+.container {position:relative;
+}

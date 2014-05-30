@@ -1,0 +1,13 @@
+&renderTo e' obbligatorio va passato sempre
+
+&init=true o t (questo e' per inizializzare la mappa)
+aggiungere parametro di default a true
+quindi ad ogni richiesta mandare un false o visto che e' JS assume che non va inizializzato,
+solo nella richiesta HTML inizializza la roba
+
+&out=js
+&passarenomelayer se serve
+
+
+http://localhost:8080/maps/api?baselayers=osm,mapquest,mapquest_nasa&out=js&renderTo=map1
+http://localhost:8080/maps/api?out=js&renderTo=map1

@@ -1,0 +1,207 @@
+<html>
+	
+	<head>
+		<title>FENIX Charts - TryIt Gallery</title>
+		<script type="text/javascript">
+			function reatTextArea (id) {
+				var content = document.getElementById('textarea_' + id).value;
+				return content;
+			}
+			function refreshIFrame(id) {
+				var site = reatTextArea(id);
+				document.getElementById('iframe_' + id).src = site;
+			}
+			function init() {
+//				refreshIFrame(1);
+//				refreshIFrame(2);
+//				refreshIFrame(3);
+			}
+		</script>
+		<link rel="stylesheet" type="text/css" href="TryIt.css" />
+		<link rel='icon' type='image/png' href='http://ldvapp07.fao.org:10080/downloads/fao.png'>
+	</head>
+	
+	<body onload='init();' style='background-color:#eeeeee'>
+		
+		<br/>
+		
+		<a name='menu'>
+			<table align='center' class='frame'>
+				<tr>
+					<td class='menucell'><a href='#map1'>Join Map</a></td>
+ 					<td class='menucell'><a href='#map2'>Custom join Map</a></td> 
+					<td class='menucell'><a href='#map3'>Points Map</a></td> 
+			</table>
+		</a>
+		
+		<br/>
+
+		<a name='map1'>
+			<table align='center' class='frame'>
+				<tr>
+					<td align='center' colspan='2' class='boxtitle'>Join Map</td>
+				</tr>
+				<tr>
+					<td>
+						<iframe id='iframe_1' frameborder='0' src='http://fenixapps.fao.org/maps/api?
+baselayers=osm
+&layers=gaul0_faostat,gaul0_line
+&styles=join,gaul0_line
+&joinboundary=faostat
+&joindata=[(270,1100),(124,900),(68,850),(238,1110),(202,800),(12,407),(100,450),(194,700),(185,1690),(41,1790),(39,1300),(33,215),(10,1850),(231,1850),(21,2600),(4,400),(124,500),(250,1640),(215,920),(233,123),(129,1400),(133,1200),(12,1900),(11,1900),(1,1900),(52,200),(23,1339),(2,200),(3,300),(5,600),(6,550),(7,850),(8,950),(9,100),(20,950),(55,100),(65,1950),(85,780)]
+&colorramp=Blues
+&intervals=7
+&mu=USD+Mil
+&classification=quantile
+&legendtitle=USD+Mil
+&enablejoingfi=true' 
+class='iframe'>
+							Your browser does not support iframes.
+						</iframe>
+					</td>
+				</tr>
+				 <tr>
+					<td>
+						<textarea id="textarea_1" class='textarea'>http://fenixapps.fao.org/maps/api?
+baselayers=osm
+&layers=gaul0_faostat,gaul0_line
+&styles=join,gaul0_line
+&joinboundary=faostat
+&joindata=[(270,1100),(124,900),(68,850),(238,1110),(202,800),(12,407),(100,450),(194,700),(185,1690),(41,1790),(39,1300),(33,215),(10,1850),(231,1850),(21,2600),(4,400),(124,500),(250,1640),(215,920),(233,123),(129,1400),(133,1200),(12,1900),(11,1900),(1,1900),(52,200),(23,1339),(2,200),(3,300),(5,600),(6,550),(7,850),(8,950),(9,100),(20,950),(55,100),(65,1950),(85,780)]
+&colorramp=Blues
+&intervals=7
+&mu=USD+Mil
+&classification=quantile
+&legendtitle=USD+Mil
+&enablejoingfi=true</textarea> 
+					</td>
+				</tr>
+				<tr>
+					<td colspan='2'>
+						<input	type='button' 
+									value='Try It!'
+									onClick='refreshIFrame(1)' 
+									class='button' />
+					</td>
+				</tr>
+				<tr>
+					<td align='right'>
+						<a href='#menu'>Back To Menu</a>
+					</td>
+				</tr>
+			</table>
+		</a>
+
+		<a name='map2'>
+			<table align='center' class='frame'>
+				<tr>
+					<td align='center' colspan='2' class='boxtitle'>Custom Join Map</td>
+				</tr>
+				<tr>
+					<td>
+						<iframe id='iframe_2' frameborder='0' src='http://fenixapps.fao.org/maps/api?
+baselayers=mapquest
+&layers=gaul0_faostat
+&styles=join
+&joinboundary=faostat
+&joindata=[(270,1100),(124,900),(68,850),(238,1110),(202,800),(12,407),(100,450),(194,700),(185,1690),(41,1790),(39,1300),(33,215),(10,1850),(231,1850),(21,2600),(4,400),(124,500),(250,1640),(215,920),(233,123),(129,1400),(133,1200),(12,1900),(11,1900),(1,1900),(52,200),(23,1339),(2,200),(3,300),(5,600),(6,550),(7,850),(8,950),(9,100),(20,950),(55,100),(65,1950),(85,780)]
+&ranges=400,700,1200,1800
+&colors=990000,CC3300,FFFF00,33CC00,009900
+&classification=custom
+&mu=USD+Mil
+&legendtitle=USD+Mil
+&enablejoingfi=true' 
+class='iframe'>
+							Your browser does not support iframes.
+						</iframe>
+					</td>
+				</tr>
+				 <tr>
+					<td>
+						<textarea id="textarea_2" class='textarea'>http://fenixapps.fao.org/maps/api?
+baselayers=mapquest
+&layers=gaul0_faostat
+&styles=join
+&joinboundary=faostat
+&joindata=[(270,1100),(124,900),(68,850),(238,1110),(202,800),(12,407),(100,450),(194,700),(185,1690),(41,1790),(39,1300),(33,215),(10,1850),(231,1850),(21,2600),(4,400),(124,500),(250,1640),(215,920),(233,123),(129,1400),(133,1200),(12,1900),(11,1900),(1,1900),(52,200),(23,1339),(2,200),(3,300),(5,600),(6,550),(7,850),(8,950),(9,100),(20,950),(55,100),(65,1950),(85,780)]
+&ranges=400,700,1200,1800
+&colors=990000,CC3300,FFFF00,33CC00,009900
+&classification=custom
+&mu=$USD+Mil
+&legendtitle=$USD+Mil
+&enablejoingfi=true			</textarea> 
+					</td>
+				</tr>
+				<tr>
+					<td colspan='2'>
+						<input	type='button' 
+									value='Try It!'
+									onClick='refreshIFrame(2)' 
+									class='button' />
+					</td>
+				</tr>
+				<tr>
+					<td align='right'>
+						<a href='#menu'>Back To Menu</a>
+					</td>
+				</tr>
+			</table>
+		</a>
+
+
+		<a name='map3'>
+			<table align='center' class='frame'>
+				<tr>
+					<td align='center' colspan='2' class='boxtitle'>Points Map</td>
+				</tr>
+				<tr>
+					<td>
+						<iframe id='iframe_3' frameborder='0' src='http://fenixapps.fao.org/maps/api?
+baselayers=osm,mapquest,mapquest_nasa
+&layers=gaul0_faostat
+&styles=join
+&joinboundary=faostat
+&joindata=[(270,1100),(124,900),(68,850),(238,1110),(202,800),(12,407),(100,450),(194,700),(185,1690),(41,1790),(39,1300),(33,215),(10,1850),(231,1850),(21,2600),(4,400),(124,500),(250,1640),(215,920),(233,123),(129,1400),(133,1200),(12,1900),(11,1900),(1,1900),(52,200),(23,1339),(2,200),(3,300),(5,600),(6,550),(7,850),(8,950),(9,100),(20,950),(55,100),(65,1950),(85,780)]
+&joinboundary=FAOSTAT
+&intervals=6
+&jointype=point
+&mu=USD+Mil' 
+class='iframe'>
+							Your browser does not support iframes.
+						</iframe>
+					</td>
+				</tr>
+				 <tr>
+					<td>
+						<textarea id="textarea_3" class='textarea'>http://fenixapps.fao.org/maps/api?
+baselayers=osm,mapquest,mapquest_nasa
+&layers=gaul0_faostat
+&styles=join
+&joinboundary=faostat
+&joindata=[(270,1100),(124,900),(68,850),(238,1110),(202,800),(12,407),(100,450),(194,700),(185,1690),(41,1790),(39,1300),(33,215),(10,1850),(231,1850),(21,2600),(4,400),(124,500),(250,1640),(215,920),(233,123),(129,1400),(133,1200),(12,1900),(11,1900),(1,1900),(52,200),(23,1339),(2,200),(3,300),(5,600),(6,550),(7,850),(8,950),(9,100),(20,950),(55,100),(65,1950),(85,780)]
+&joinboundary=FAOSTAT
+&intervals=6
+&jointype=point
+&mu=USD+Mil				</textarea> 
+					</td>
+				</tr>
+				<tr>
+					<td colspan='2'>
+						<input	type='button' 
+									value='Try It!'
+									onClick='refreshIFrame(3)' 
+									class='button' />
+					</td>
+				</tr>
+				<tr>
+					<td align='right'>
+						<a href='#menu'>Back To Menu</a>
+					</td>
+				</tr>
+			</table>
+		</a>
+
+		<br/>
+	</body>
+
+</html>

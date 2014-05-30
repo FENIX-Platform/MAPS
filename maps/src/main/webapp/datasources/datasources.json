@@ -1,0 +1,98 @@
+[
+    {
+        "id": "AMISPOLICIES",
+        "driver": "PostgreSQL",
+        "url": "jdbc:postgresql://127.0.0.1:5432/amis_policy",
+        "dbName": "amis_policy",
+        "username": "amis_fenix",
+        "password": "Qwaszx"
+    },
+    {
+        "id": "CROWDPRICES",
+        "driver": "PostgreSQL",
+        "url": "jdbc:postgresql://127.0.0.1:5432/fenix-crowdprices",
+        "dbName": "fenix-crowdprices",
+        "username": "fenix-crowdprices",
+        "password": "Qwaszx"
+    },
+    {
+        "id": "FAOSTAT",
+        "driver": "SQLServer2000",
+        "url": "jdbc:sqlserver://HQWPRFAOSTATDB1\\Dissemination;databaseName=Warehouse;",
+        "dbName": "Warehouse",
+        "username": "Warehouse",
+        "password": "w@reh0use"
+    },
+    {
+        "id": "FAOSTAT2",
+        "driver": "SQLServer2000",
+        "url": "jdbc:sqlserver://HQWPRFAOSTATDB2\\Dissemination;databaseName=Warehouse;",
+        "dbName": "Warehouse",
+        "username": "Warehouse",
+        "password": "w@reh0use"
+    },
+    {
+        "id": "FAOSTATGLBL",
+        "driver": "SQLServer2000",
+        "url": "jdbc:sqlserver://FAOSTAT-GLBL\\Dissemination;databaseName=Warehouse;",
+        "dbName": "Warehouse",
+        "username": "Warehouse",
+        "password": "w@reh0use"
+    },
+    {
+        "id": "FAOSTATPROD",
+        "driver": "SQLServer2000",
+        "url": "jdbc:sqlserver://FAOSTAT-PROD\\Production;databaseName=Warehouse;",
+        "dbName": "Warehouse",
+        "username": "Warehouse",
+        "password": "w@reh0use"
+    },
+    {
+        "id": "FAOSTATPRODDISS",
+        "driver": "SQLServer2000",
+        "url": "jdbc:sqlserver://FAOSTAT-PROD\\Dissemination;databaseName=Warehouse;",
+        "dbName": "Warehouse",
+        "username": "Warehouse",
+        "password": "w@reh0use"
+    },
+    {
+        "id": "FAOSTATTESTDISS",
+        "driver": "SQLServer2000",
+        "url": "jdbc:sqlserver://FAOSTAT-TEST\\Dissemination;databaseName=Warehouse;",
+        "dbName": "Warehouse",
+        "username": "Warehouse",
+        "password": "w@reh0use"
+    },
+    {
+        "id": "FAOSYB",
+        "driver": "PostgreSQL",
+        "url": "jdbc:postgresql://127.0.0.1:5432/fenix-faosyb",
+        "dbName": "fenix-faosyb",
+        "username": "fenix-guest",
+        "password": "W3lc0m3"
+    },
+    {
+        "id": "FENIX",
+        "driver": "PostgreSQL",
+        "url": "jdbc:postgresql://127.0.0.1:5432/fenix",
+        "dbName": "fenix",
+        "username": "fenix",
+        "password": "Qwaszx"
+    },
+    {
+        "id": "FENIXDATAMANAGER",
+        "driver": "PostgreSQL",
+        "url": "jdbc:postgresql://127.0.0.1:5432/fenix-datamanager",
+        "dbName": "fenix-datamanager",
+        "username": "fenix-datamanager",
+        "password": "Qwaszx"
+    },
+    {
+        "id": "STAGINGAREA",
+        "driver": "PostgreSQL",
+        "url": "jdbc:postgresql://127.0.0.1:5432/fenix",
+        "dbName": "fenix",
+        "username": "fenix",
+        "password": "Qwaszx"
+    }
+]
