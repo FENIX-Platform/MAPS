@@ -5,7 +5,7 @@
 	</properties>
   <groupId>org.fao.fenix</groupId>
   <artifactId>maps-core</artifactId>
-  <name>Maps</name>
+  <name>Maps Core</name>
   <version>1.0-SNAPSHOT</version>
   <description>Maps Core</description>
   <build>

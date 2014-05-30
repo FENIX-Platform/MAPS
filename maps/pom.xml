@@ -4,7 +4,7 @@
    <artifactId>maps</artifactId>
    <version>1.0-SNAPSHOT</version>
    <packaging>war</packaging>
-   <name>FENIX Maps Web Service</name>
+   <name>MAPS REST Service</name>
 	<issueManagement>
 		<system>Jira</system>
 		<url>http://ldvapp07.fao.org:8030/jira/</url>
