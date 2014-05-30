@@ -1,0 +1,73 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><link rel='stylesheet' href='http://fenixapps.fao.org/maps/libs/leaflet/0.4/leaflet.css' /><!--[if lte IE 8]><link rel='stylesheet' href='http://fenixapps.fao.org/maps/libs/leaflet/0.4/leaflet.ie.css' /><![endif]--></head><body>	<style>body {padding: 0;margin: 0;} html, body, 
+#map {width: 550; height: 275; }
+#map2 {width: 550; height: 275; } 
+#map3 {width: 550; height: 275; }
+</style><link rel='stylesheet' href='http://fenixapps.fao.org/maps/libs/leaflet/0.4/legend.css' /><!--[if lte IE 8]><link rel='stylesheet' href='http://fenixapps.fao.org/maps/libs/leaflet/0.4/legend.ie.css' /><![endif]--></head><body></style><script src="http://fenixapps.fao.org/maps/libs/leaflet/0.4/leaflet.js" type="text/javascript"></script>
+
+<div style="font-size:11px"><b>Master Map<b><div id="map"></div>
+<div class=''><div id="map2"></div>
+<div class=''><div id="map3"></div>
+
+
+<script type="text/javascript">
+
+var map = new L.Map('map');
+var map2 = new L.Map('map2');
+var map3 = new L.Map('map3');
+
+var southWest = new L.LatLng(-10.48638987541199,0.8389472961426);
+var northEast = new L.LatLng(10.1468868255615,60.5800361633301);
+var bounds = new L.LatLngBounds(southWest, northEast);
+map.fitBounds(bounds);
+map2.fitBounds(bounds);
+map3.fitBounds(bounds);
+
+var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+var osm = new L.TileLayer(osmUrl);		
+map.addLayer(osm);
+
+var mapQuestURL='http://otile1.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png';
+var mapQuest = new L.TileLayer(mapQuestURL);	
+
+
+var baseMaps = {"Open Street Map": osm, "Map Quest": mapQuest};
+var overlayMaps = {};
+var layersControl = new L.Control.Layers(baseMaps, overlayMaps);
+map.addControl(layersControl);
+
+
+var nasa='http://tile21.mqcdn.com/tiles/1.0.0/sat/{z}/{x}/{y}.png';
+var nasa = new L.TileLayer(nasa);		
+map2.addLayer(nasa);
+
+
+
+//var layer1 = new L.TileLayer.WMS('http://fenix.fao.org:8050/geoserver/wms',
+//{layers:"fenix:maize_density",format:"image/png",styles:"",visibility:true,transparent:true});
+//map2.addLayer(layer1);
+
+var unreddforest = new L.TileLayer.WMS('http://www.rdc-snsf.org/geoserver_drc/gwc/service/wms',{layers:"unredd%3Aforest_classification",format:"image/png",visibility:true,transparent:true});
+map2.addLayer(unreddforest);
+
+var layer3 = new L.TileLayer.WMS('http://fenix.fao.org:8050/geoserver/wms',
+{layers:"fenix:mi09121_da",format:"image/png",styles:"",visibility:true,transparent:true});
+map3.addLayer(layer3);
+
+var layer2 = new L.TileLayer.WMS('http://fenixapps.fao.org/geo',
+{layers:"gaul0_line",format:"image/png",styles:"gaul0_line",visibility:true,transparent:true});
+map3.addLayer(layer2);
+
+
+
+map.on('moveend', function(e) {
+	map2.setView(map.getCenter(), map.getZoom());
+});
+map.on('moveend', function(e) {
+	map3.setView(map.getCenter(), map.getZoom());
+});
+
+
+</script>
+</body>
+</html>
+
