@@ -21,7 +21,6 @@ import org.geoscript.geocss.Converter;
 import org.geotools.styling.Style;
 import org.geotools.styling.SLDTransformer;
 
-
 public class CSS2SLDServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws  IOException {
