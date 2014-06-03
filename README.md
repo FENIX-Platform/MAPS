@@ -1,4 +1,4 @@
 MAPS
 ====
 
-FENIX Map REST Service
+FENIX Map REST Services
