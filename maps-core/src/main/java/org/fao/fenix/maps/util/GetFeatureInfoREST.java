@@ -141,16 +141,17 @@ public class GetFeatureInfoREST {
 	private static String getCode(String content, String columncode) {		
 		List<String> values = Parser.extractValues(content, "<value>", "</value>"); 
 		String cv = "";
-//		LOGGER.info("values: " + values);
+		//LOGGER.info("values: " + values);
 
 		for(String value : values) {
 			String cm = Parser.extractValue(value, "<columnname>", "</columnname>");
-//			LOGGER.info("columncode: " + columncode);
+			//LOGGER.info("columncode: " + columncode);
 			if ( columncode.equalsIgnoreCase(cm)) {	
 				cv = Parser.extractValue(value, "<columnvalue>", "</columnvalue>");
 				// TODO: to be removed the codes should be without the decimal points
-				cv = Parser.extractValue(String.valueOf(cv), ".");
-//				LOGGER.info("cv1: -" +cv +"-");
+                if (cv.contains("."))
+				    cv = Parser.extractValue(String.valueOf(cv), ".");
+				LOGGER.info("cv1: -" +cv +"-");
 				return cv;
 			}
 		}
@@ -161,14 +162,14 @@ public class GetFeatureInfoREST {
 	private static String getLabel(String content, String lang) {		
 		List<String> values = Parser.extractValues(content, "<name>", "</name>"); 
 		String cm = "";
-//		LOGGER.info("name: " + values);
-//		LOGGER.info("lang: " + lang);
+		//LOGGER.info("name: " + values);
+		//LOGGER.info("lang: " + lang);
 		for(String value : values) {
 			cm = Parser.extractValue(value, "<"+lang+">", "</"+lang+">");
-//			LOGGER.info("VALUE:" +  value);
-//			LOGGER.info("cm:" +  cm);
+			//LOGGER.info("VALUE:" +  value);
+			//LOGGER.info("cm:" +  cm);
 			if ( cm != null ) {
-//				LOGGER.info("BREAK");
+				//LOGGER.info("BREAK");
 				break;
 			}
 		}

@@ -32,9 +32,11 @@ public class SLDCreator {
 		sld.append("<sld:FeatureTypeStyle>");
 		
 
-		LOGGER.info("VALUEs: " + values);
+		LOGGER.info("VALUES: " + values);
         LinkedHashMap<Double, List<String>> classifiedIDs = new LinkedHashMap<Double, List<String>>();
 
+
+        /** TODO: check NODATA Values **/
 
         Double baseValue = -9223372036854775808.0;// TODO: Double.MIN_VALUE doesn't work, set the minimum value
         // If for the first value is <= the others is < and the last one =>
@@ -71,12 +73,13 @@ public class SLDCreator {
             String valueFormatted = getValueFormatted(lastValue, thousandSeparator, decimalSeparator);
             valueFormatted = ( valueFormatted.endsWith(decimalSeparator + "0"))? valueFormatted.substring(0,valueFormatted.length()-2) : valueFormatted;
 
+            /** LABEL TITLE TODO: check if there are labels passed **/
             String classificationTitle = (i ==0 )? "&#60;&#61; " + valueFormatted: "&#60; " + valueFormatted;
             sld.append(createRule(classificationTitle, propertyColumnName, classifiedIDs.get(v), colors.get(i), addBorders, bordersColor, bordersStroke, bordersOpacity));
             i++;
         }
-        // TODO: the remaining codes on the latest class
 
+        // TODO: the remaining codes on the Last Class
         List<String> lastClass = new ArrayList<String>();
         for (String key : mapClone.keySet()) {
             lastClass.add(key);
@@ -85,6 +88,7 @@ public class SLDCreator {
             String valueFormatted = getValueFormatted(lastValue, thousandSeparator, decimalSeparator);
             valueFormatted = ( valueFormatted.endsWith(decimalSeparator + "0"))? valueFormatted.substring(0,valueFormatted.length()-2) : valueFormatted;
 
+            /** LABEL TITLE TODO: check if there are labels passed **/
             String classificationTitle = (classifiedIDs.size()>1)? "&#62;&#61; " + valueFormatted:  "&#62; " + valueFormatted;
             sld.append(createRule(classificationTitle, propertyColumnName, lastClass, colors.get(i), addBorders, bordersColor, bordersStroke, bordersOpacity));
         }

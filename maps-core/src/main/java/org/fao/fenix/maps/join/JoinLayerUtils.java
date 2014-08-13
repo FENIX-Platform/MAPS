@@ -173,7 +173,9 @@ public class JoinLayerUtils {
             case equalinterval: joinLayer.setRanges(SLDCreator.getEqualIntervals(joinLayer.getJoindata(), joinLayer.getIntervals(), joinLayer.getDecimalNumbers())); break;
             case equalarea: joinLayer.setRanges(SLDCreator.getEqualAreas(joinLayer.getJoindata(), joinLayer.getAreas(), joinLayer.getIntervals(), joinLayer.getDecimalNumbers())); break;
             case custom: /** the ranges are already set **/ break;
-            case customequal: /** the ranges are already set **/customEqual = true; break;
+            case customequal: /** the ranges are already set **/
+                customEqual = true;
+                break;
         }
 
         // here do the colors with the right ranges
@@ -185,13 +187,11 @@ public class JoinLayerUtils {
             }
         }
 
-//		LOGGER.info("COLORS: " + joinLayer.getColors());
-        if ( sldStyleName == null )
-            sldStyleName = MapUtils.getRandomName();
+        // check if sldStyleName is null
+        sldStyleName  = ( sldStyleName == null )? MapUtils.getRandomName(): sldStyleName;
 
         String sld = "";
         /**  TODO: fix for the FSD **/
-//		LOGGER.info("customEqual: " + customEqual);
         if ( !customEqual ) {
             sld = SLDCreator.createSLD(layername, sldStyleName, sldStyleName,joinLayer.getJoincolumn(), joinLayer.getJoindata(), joinLayer.getRanges(), joinLayer.getColors(), joinLayer.isAddBorders(), joinLayer.getBordersColor(), joinLayer.getBordersStroke(), joinLayer.getBordersOpacity(), joinLayer.getThousandSeparator(), joinLayer.getDecimalSeparator());
         }

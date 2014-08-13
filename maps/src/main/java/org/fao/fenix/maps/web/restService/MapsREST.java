@@ -168,7 +168,7 @@ public class MapsREST {
         String stringURL = "";
         // getGeoserverWMS  /** TODO: check if there is a get without case sensitive
         stringURL += parameters.get("urlWMS")[0];
-        stringURL += '?';
+        stringURL += (!stringURL.contains("?"))? "?": "";
 
 
         String values = "";
