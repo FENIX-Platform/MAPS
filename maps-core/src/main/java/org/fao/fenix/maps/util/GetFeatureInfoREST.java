@@ -151,7 +151,7 @@ public class GetFeatureInfoREST {
 				// TODO: to be removed the codes should be without the decimal points
                 if (cv.contains("."))
 				    cv = Parser.extractValue(String.valueOf(cv), ".");
-				LOGGER.info("cv1: -" +cv +"-");
+				//LOGGER.info("cv1: -" +cv +"-");
 				return cv;
 			}
 		}
