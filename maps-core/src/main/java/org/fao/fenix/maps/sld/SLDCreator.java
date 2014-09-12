@@ -109,32 +109,40 @@ public class SLDCreator {
 
     private static String createRule(String classificationTitle, String propertyColumnName, List<String> codes, String color, Boolean addBorders, String bordersColor, String bordersStroke, String bordersOpacity) {
         StringBuilder rule = new StringBuilder();
-        rule.append("<sld:Rule>");
+        System.out.println("createRule: " + codes);
+//        TODO: instead of that try with a dummy filter if the codes are = 0 (i.e. random number/string)
+        if ( codes.size() > 0) {
+            rule.append("<sld:Rule>");
             // CLASSIFICATION TITLE
             rule.append(addTitleTag(classificationTitle));
 
             rule.append("<ogc:Filter>");
 
-            if ( codes.size() > 1) { rule.append("<ogc:Or>"); }
-            for( String code : codes ){
+            if (codes.size() > 1) {
+                rule.append("<ogc:Or>");
+            }
+            for (String code : codes) {
                 rule.append("<ogc:PropertyIsEqualTo>");
-                    rule.append("<ogc:PropertyName>"+ propertyColumnName + "</ogc:PropertyName>");
-                    rule.append("<ogc:Literal>"+ code +"</ogc:Literal>");
+                rule.append("<ogc:PropertyName>" + propertyColumnName + "</ogc:PropertyName>");
+                rule.append("<ogc:Literal>" + code + "</ogc:Literal>");
                 rule.append("</ogc:PropertyIsEqualTo> ");
             }
-            if ( codes.size() > 1) { rule.append("</ogc:Or>"); }
+            if (codes.size() > 1) {
+                rule.append("</ogc:Or>");
+            }
             rule.append("</ogc:Filter>");
             rule.append("<sld:PolygonSymbolizer>");
-                rule.append("<sld:Fill>");
-                    rule.append("<sld:CssParameter name=\"fill\">"+ color +"</sld:CssParameter>");
-                rule.append(" </sld:Fill>");
+            rule.append("<sld:Fill>");
+            rule.append("<sld:CssParameter name=\"fill\">" + color + "</sld:CssParameter>");
+            rule.append(" </sld:Fill>");
 
             // add borders rule
-            if ( addBorders )
-                rule.append(addDefaultBorderRule("#"+ bordersColor, bordersStroke, bordersOpacity));
-             rule.append("</sld:PolygonSymbolizer>");
+            if (addBorders)
+                rule.append(addDefaultBorderRule("#" + bordersColor, bordersStroke, bordersOpacity));
+            rule.append("</sld:PolygonSymbolizer>");
 
-                rule.append("</sld:Rule>");
+            rule.append("</sld:Rule>");
+       }
        return rule.toString();
     }
 
